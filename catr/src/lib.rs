@@ -24,7 +24,7 @@ pub fn get_args() -> MyResult<Config> {
                 .value_name("FILES")
                 .help("Files to concatenate")
                 .required(true)
-                .num_args(1..),
+                .default_value("-"),
         )
         .arg(
             Arg::new("number_lines")
