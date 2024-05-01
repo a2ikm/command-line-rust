@@ -3,6 +3,8 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(version)]
 struct Args {
+    ///strings to print
+    #[arg(required(true))]
     string: Vec<String>,
 
     /// omit newline
