@@ -3,7 +3,7 @@ use clap::Parser;
 #[derive(Parser, Debug)]
 #[command(version)]
 struct Args {
-    strings: Vec<String>,
+    string: Vec<String>,
 
     /// omit newline
     #[arg(short = 'n')]
@@ -13,7 +13,7 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    for (i, arg) in args.strings.iter().enumerate() {
+    for (i, arg) in args.string.iter().enumerate() {
         if i > 0 {
             print!(" ")
         }
