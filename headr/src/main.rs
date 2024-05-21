@@ -39,7 +39,7 @@ fn run(args: Args) -> Result<(), Box<dyn Error>> {
             );
         }
 
-        match open(&filename) {
+        match open(filename) {
             Ok(mut reader) => {
                 if let Some(num_bytes) = args.num_bytes {
                     show_head_by_bytes(&mut reader, num_bytes)?;
