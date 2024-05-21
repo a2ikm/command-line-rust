@@ -10,7 +10,7 @@ struct Args {
     file: Vec<String>,
 
     /// Number to show characters in bytes
-    #[arg(short = 'c', long = "bytes", value_name = "BYTES", value_parser = clap::value_parser!(u64).range(1..))]
+    #[arg(short = 'c', long = "bytes", value_name = "BYTES", conflicts_with = "num_lines", value_parser = clap::value_parser!(u64).range(1..))]
     num_bytes: Option<u64>,
 
     /// Number to show lines
