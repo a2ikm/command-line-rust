@@ -24,12 +24,7 @@ struct Args {
     lines: bool,
 
     /// Number of words
-    #[arg(
-        short = 'w',
-        long = "words",
-        default_value = "false",
-        conflicts_with = "bytes"
-    )]
+    #[arg(short = 'w', long = "words", default_value = "false")]
     words: bool,
 
     /// Number of bytes
@@ -37,12 +32,17 @@ struct Args {
         short = 'c',
         long = "bytes",
         default_value = "false",
-        conflicts_with = "words"
+        conflicts_with = "chars"
     )]
     bytes: bool,
 
     /// Number of characters
-    #[arg(short = 'm', long = "chars", default_value = "false")]
+    #[arg(
+        short = 'm',
+        long = "chars",
+        default_value = "false",
+        conflicts_with = "bytes"
+    )]
     chars: bool,
 }
 
