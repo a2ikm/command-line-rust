@@ -23,6 +23,6 @@ fn main() {
     }
 
     if !args.omit_newline {
-        print!("\n")
+        println!()
     }
 }
