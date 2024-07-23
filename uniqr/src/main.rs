@@ -60,7 +60,7 @@ fn run(args: Args) -> MyResult<()> {
         }
 
         if line.trim_end() != previous.trim_end() {
-            print(count, &previous);
+            print(count, &previous)?;
             previous = line.clone();
             count = 0;
         }
@@ -69,7 +69,7 @@ fn run(args: Args) -> MyResult<()> {
         line.clear();
     }
 
-    print(count, &previous);
+    print(count, &previous)?;
 
     Ok(())
 }
