@@ -37,6 +37,7 @@ fn run(args: Args) -> MyResult<()> {
         _ => Box::new(io::stdout()),
     };
 
+    // This closure must be declared as mut to refer mutable out_file.
     let mut print = |count: u64, text: &str| -> MyResult<()> {
         if count > 0 {
             if args.count {
